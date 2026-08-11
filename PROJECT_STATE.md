@@ -1,7 +1,7 @@
 # PROJECT_STATE.md — OSS Engineering Track
 
 > Source of truth for the weekly cycle. Updated by Monday planning + daily execution crons.
-> Cadence: ONE project per week, FULLY COMPLETED Mon-Sun. Weekly rotation.
+> Cadence: ONE weekly project (PR or tool) + parallel side-projects from IDEAS.md. NO zero-commit days Mon-Sat (Sun report-only; Mon = planning + base/repo creation).
 
 ---
 

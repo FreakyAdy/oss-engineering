@@ -1,6 +1,6 @@
 # OSS Engineering — Idea Backlog
 
-> One project per week (Mon selection → Sun completion). Pick unbuilt candidates here first;
+> Weekly project + parallel side-projects. NO zero-commit days Mon-Sat — pick unbuilt candidates here first;
 > validate the problem at selection time. Research-agent findings get merged in when they land.
 
 ## New-project candidates (unvalidated until selection)
@@ -14,6 +14,9 @@
 | SQLite experiment tracker | Tiny local-first run/experiment logger for LLM evals (no server, no cloud) | Python, sqlite3 | Scoped small vs MLflow/Langfuse; CLI + JSON export |
 | Dataset integrity checker | Verify eval/benchmark datasets: schema, hashes, duplicates, label drift | Python CLI | Reproducibility angle, testable |
 | GitHub Actions issue triager | Auto-label/route new issues by content for small repos | YAML + TS/Python | Real audience: single-maintainer repos |
+| gh-pulse | Terminal dashboard of your open PRs / CI status / review requests across repos (gh-powered) | Python CLI, gh | Directly useful with multi-PR workflow; parses gh output = testable |
+| issue-feeder | Rank good-first-issue candidates across candidate repos (age, stars, labels) to feed weekly selection | Python CLI, gh | Feeds the Monday selection cron; real cadence utility |
+| jsonl-tail | Tail JSONL files (eval logs) with pretty-printed last-N records + filters | Python CLI | Eval logs are JSONL; tiny, testable |
 
 ## Existing-repo contribution candidates (from Phase 1 research)
 
