@@ -1,6 +1,6 @@
 # OSS Engineering — Idea Backlog
 
-> Weekly project + parallel side-projects. NO zero-commit days Mon-Sat — pick unbuilt candidates here first;
+> Weekly = PR + tool (odd weeks) or PR + full-scale project (even weeks). NO zero-commit days Mon-Sat — pick unbuilt candidates here first;
 > validate the problem at selection time. Research-agent findings get merged in when they land.
 
 ## New-project candidates (unvalidated until selection)

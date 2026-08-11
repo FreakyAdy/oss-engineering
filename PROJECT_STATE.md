@@ -1,7 +1,13 @@
 # PROJECT_STATE.md — OSS Engineering Track
 
 > Source of truth for the weekly cycle. Updated by Monday planning + daily execution crons.
-> Cadence: ONE weekly project (PR or tool) + parallel side-projects from IDEAS.md. NO zero-commit days Mon-Sat (Sun report-only; Mon = planning + base/repo creation).
+> Cadence: EVERY week = ONE PR (active OSS repo) + ONE tool OR full-scale project (alternate weeks). NO zero-commit days Mon-Sat (Sun report-only; Mon = planning + base/repo creation).
+
+### OPERATING RULES (user-locked 2026-08-12)
+1. **Two weekly deliverables, non-negotiable:** (1) ONE complete PR into an active OSS repo + (2) ONE standalone tool (own public repo, complete within the week) — OR a **full-scale project** on alternate weeks (ambitious, multi-week allowed; occupies the tool slot until complete).
+2. **No zero-commit days Mon-Sat.** Sunday = report only. Monday = planning + base/repo creation commits.
+3. **Alternation:** odd weeks = tool; even weeks = full-scale project (W2, W4, ...). Monday cron schedules it.
+4. Quality bar stands: real work only, tests, docs, one coherent change per commit. No fabricated activity.
 
 ---
 
