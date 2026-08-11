@@ -1,0 +1,15 @@
+# Nested git clone of the weekly project repo — tracked by its own fork/upstream remotes,
+# not by this workspace repo. Logs live in PROJECT_STATE.md.
+inspect_ai/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
