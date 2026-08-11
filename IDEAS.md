@@ -16,7 +16,7 @@
 | GitHub Actions issue triager | Auto-label/route new issues by content for small repos | YAML + TS/Python | Real audience: single-maintainer repos |
 | gh-pulse | Terminal dashboard of your open PRs / CI status / review requests across repos (gh-powered) | Python CLI, gh | Directly useful with multi-PR workflow; parses gh output = testable |
 | issue-feeder | Rank good-first-issue candidates across candidate repos (age, stars, labels) to feed weekly selection | Python CLI, gh | Feeds the Monday selection cron; real cadence utility |
-| jsonl-tail | Tail JSONL files (eval logs) with pretty-printed last-N records + filters | Python CLI | Eval logs are JSONL; tiny, testable |
+| jsonl-tail | Tail JSONL files (eval logs, datasets) with pretty-printed JSON, filters, live follow | Python CLI, stdlib | **[IN PROGRESS]** repo: FreakyAdy/jsonl-tail (built 2026-08-12) |
 
 ## Existing-repo contribution candidates (from Phase 1 research)
 

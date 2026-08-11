@@ -106,3 +106,28 @@ Python ≥3.10, pytest (project uses pytest via uv/hatchling), ruff. Local: venv
 
 ### NEXT WEEK (Week 2)
 After #4695 ships: chain the accepted-issue queue in inspect_ai (#4770, #4781, #4756) OR new tool from IDEAS.md. Decision at Monday 09:00 cron.
+
+---
+
+## SIDE-PROJECT TRACK (parallel to weekly PR, from 2026-08-12)
+
+> No-zero-days mandate (Ady, 2026-08-12): every Mon-Sat has a real commit. When the weekly PR is done/blocked,
+> the side-project track supplies the day's work. Each side project = its own public repo, built till it's complete.
+
+### SIDE PROJECT #1: jsonl-tail
+- **REPO:** https://github.com/FreakyAdy/jsonl-tail (public) — created 2026-08-12
+- **WHY:** tail JSONL files (eval logs, datasets) with pretty-printed JSON, filters, live follow. Name free on PyPI + npm (verified 2026-08-12). Directly useful for LLM eval work; stdlib-only; dogfoods the eval-log workflow.
+- **STACK:** Python ≥3.10, stdlib only, uv + hatchling, pytest, ruff.
+
+| Day | Task | Status |
+|-----|------|--------|
+| Wed 08-12 | Repo + scaffold + core: pretty/compact print, -n/-a, stdin, --filter/--regex/--key, invalid-line passthrough | DONE — 13 tests, ruff clean, pushed |
+| Thu 08-13 | Follow-mode tests (append + truncation), edge cases (empty file, CRLF, unicode, oversized records), LICENSE (MIT) | pending |
+| Fri 08-14 | Polish: CHANGELOG, README badges, final full test+lint, **COMPLETE before Sat** | pending |
+| Sat 08-15 | Buffer only — fixes if needed; else WEEKLY_LOG.md entry | pending |
+
+### COMPLETED SIDE PROJECTS (log)
+- (none yet)
+
+### BACKLOG (next picks)
+IDEAS.md: gh-pulse, issue-feeder, agent-eval CLI, promptlint, dataset integrity checker, GitHub Actions issue triager, LLM cost estimator.
