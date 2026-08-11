@@ -8,6 +8,7 @@
 2. **No zero-commit days Mon-Sat.** Sunday = report only. Monday = planning + base/repo creation commits.
 3. **Alternation:** odd weeks = tool; even weeks = full-scale project (W2, W4, ...). Monday cron schedules it.
 4. Quality bar stands: real work only, tests, docs, one coherent change per commit. No fabricated activity.
+5. **Strict Monday planning (2026-08-12):** Mon 09:00 produces a BINDING day-by-day plan (Mon–Sat). Every day's tasks are mandatory and followed in order until complete — no skipping, deferring, or substituting. All deliverables complete by SATURDAY; Sunday is report-only (no buffer). If a day slips, the next cron re-plans the remaining days to still finish by Sat, and the deviation is reported loudly.
 
 ---
 
