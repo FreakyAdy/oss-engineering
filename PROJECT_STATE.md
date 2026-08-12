@@ -75,16 +75,24 @@ Python ≥3.10, pytest (project uses pytest via uv/hatchling), ruff. Local: venv
 - **PR #4830 opened 2026-08-11 20:40** — `feat: warn when model-graded scorer runs without a grader model or role` (https://github.com/UKGovernmentBEIS/inspect_ai/pull/4830), `Fixes #4695`, gate CI green
 - Bonus: **PR #4831 opened 2026-08-11 20:40** — `fix: map POSIX 'no such file or directory' to FileNotFoundError in docker sandbox` (https://github.com/UKGovernmentBEIS/inspect_ai/pull/4831), 2 commits, gate CI green (from the accepted-issue queue)
 
-**Wed (Day 3) — Edge cases + hardening. Expected commits: 1. DONE**
+**Wed (Day 3) — Edge cases + hardening. DONE; PR TRACK PIVOTED**
 - Partial-binding edge cases verified covered by PR #4830 tests (role bound no model / model no role / role requested but unbound)
 - Added missing nested/multi-scorer coverage: multi-scorer model list stays silent; nested unbound scorers dedupe to exactly one warning
 - Commit `test: cover nested and multi-scorer configs for grader binding warning` (5538904d9), pushed to fork
 - Full suite: 459 passed, 170 skipped (vllm/trio env skips); ruff check + format clean
 - Added `### Agent review` disclosure to both PR bodies per AGENTS.md
+- **PIVOT:** both PRs closed by maintainer as duplicates (#4830 → #4783; #4831 → merged PR). New target: commitizen #1565 (JSON Schema File), claimed, branch `feat/cz-json-schema` created, scaffold committed.
 
-**Thu (Day 4) — Docs + PR. Expected commits: 1-2**
-- CHANGELOG.md entry (follow project format) + any scorer docs touch — pending; PR opened early on Tue, so docs commit can land here
-- Final full test run + lint before any further push
+**Wed (Day 3, revised) — PR track: commitizen #1565 JSON Schema. Expected commits: 1-2**
+- Study commitizen config models (`commitizen/config/`, `defaults.py` Settings/CzSettings TypedDicts) + existing tests (`tests/test_conf.py`)
+- Design: JSON Schema covering `[tool.commitizen]` settings (Settings + CzSettings) — check how the maintainer discussion proposed scoping it (schemastore.org release)
+- Implement schema + tests (valid/invalid config samples) + docs touch
+- Run `uv run poe test` subset + lint before commit
+
+**Thu (Day 4) — PR track: finish #1565 + jsonl-tail side track. Expected commits: 2-3**
+- Complete schema implementation + tests; full `poe` validation; push branch to fork; open PR (per CONTRIBUTING + PR template)
+- jsonl-tail: follow-mode tests, edge cases, MIT license
+- Final full test + lint both repos
 
 **Fri (Day 5) — Maintainer feedback + stretch. Expected commits: 1-2**
 - Check PRs for maintainer comments; respond + revise if needed (commit fixes as `fix: address review feedback`)
@@ -108,8 +116,9 @@ Python ≥3.10, pytest (project uses pytest via uv/hatchling), ruff. Local: venv
 ### BLOCKERS / ACTION ITEMS
 - ~~**Ady: run `gh auth login`**~~ — RESOLVED 2026-08-11. Authed as FreakyAdy (ssh protocol; scopes: admin:public_key, gist, read:org, repo).
 - Rate-limited unauthenticated GitHub API on shared IP — use raw.githubusercontent.com / jina / browser for reads.
-- Both PRs await maintainer review (reviewDecision: REVIEW_REQUIRED). No comments as of 2026-08-12 02:30.
-- PR #4830 CHANGELOG entry still pending (Day 4 task).
+- **W1 PR TRACK PIVOT (2026-08-12):** Both W1 PRs CLOSED as duplicates by maintainer (dragonstyle) — #4830 duplicated #4783 (open PR with maintainer's design direction), #4831 duplicated an already-merged PR. **Lesson: verify zero open PRs AND zero claimant comments on the issue BEFORE implementing.**
+- **New W1 PR target: commitizen-tools/commitizen #1565 "JSON Schema File"** — claimed 2026-08-12 (issue comment), zero open PRs, zero claimants, repo active (pushed 08-10, 3.5k★). Branch `feat/cz-json-schema` created locally.
+- PR #4830 CHANGELOG entry no longer needed (closed).
 
 ### NEXT WEEK (Week 2)
 After #4695 ships: chain the accepted-issue queue in inspect_ai (#4770, #4781, #4756) OR new tool from IDEAS.md. Decision at Monday 09:00 cron.
