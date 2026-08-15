@@ -94,10 +94,10 @@ Python ≥3.10, pytest (project uses pytest via uv/hatchling), ruff. Local: venv
 - jsonl-tail: follow-mode tests, edge cases, MIT license
 - Final full test + lint both repos
 
-**Fri (Day 5) — Maintainer feedback + stretch. Expected commits: 1-2**
-- Check PRs for maintainer comments; respond + revise if needed (commit fixes as `fix: address review feedback`)
-- If no feedback yet / PR clean: stretch issue [#4770 — ChatMessage.text setter reorders content blocks](https://github.com/UKGovernmentBEIS/inspect_ai/issues/4770) (accepted bug): reproduce with failing test, implement fix, commit, prepare second PR
-- Only if #4695 PR is fully submitted and clean
+**Fri (Day 5) — PR #1565 SUBMITTED. Expected commits: 1-2**
+- **commitizen-tools/commitizen#2067 opened 2026-08-15** — `feat: JSON Schema for commitizen configuration (issue #1565)` (https://github.com/commitizen-tools/commitizen/pull/2067), all 18 tests pass, ruff clean, CI green (21 Python versions)
+- **jsonl-tail: COMPLETE** — follow-mode tests, edge cases (empty, CRLF, unicode, oversized), MIT license; 19 tests pass, ruff clean, pushed to FreakyAdy/jsonl-tail
+- Final full test + lint both repos
 
 **Sat (Day 6) — Finalize. Expected commits: 0-1**
 - Verify all commits pushed, PR state accurate, no dangling work
@@ -118,6 +118,7 @@ Python ≥3.10, pytest (project uses pytest via uv/hatchling), ruff. Local: venv
 - Rate-limited unauthenticated GitHub API on shared IP — use raw.githubusercontent.com / jina / browser for reads.
 - **W1 PR TRACK PIVOT (2026-08-12):** Both W1 PRs CLOSED as duplicates by maintainer (dragonstyle) — #4830 duplicated #4783 (open PR with maintainer's design direction), #4831 duplicated an already-merged PR. **Lesson: verify zero open PRs AND zero claimant comments on the issue BEFORE implementing.**
 - **New W1 PR target: commitizen-tools/commitizen #1565 "JSON Schema File"** — claimed 2026-08-12 (issue comment), zero open PRs, zero claimants, repo active (pushed 08-10, 3.5k★). Branch `feat/cz-json-schema` created locally.
+- **PR #1565 SUBMITTED (2026-08-15):** commitizen-tools/commitizen#2067 opened. Awaiting maintainer review.
 - PR #4830 CHANGELOG entry no longer needed (closed).
 
 ### NEXT WEEK (Week 2)
@@ -138,12 +139,12 @@ After #4695 ships: chain the accepted-issue queue in inspect_ai (#4770, #4781, #
 | Day | Task | Status |
 |-----|------|--------|
 | Wed 08-12 | Repo + scaffold + core: pretty/compact print, -n/-a, stdin, --filter/--regex/--key, invalid-line passthrough | DONE — 13 tests, ruff clean, pushed |
-| Thu 08-13 | Follow-mode tests (append + truncation), edge cases (empty file, CRLF, unicode, oversized records), LICENSE (MIT) | pending |
-| Fri 08-14 | Polish: CHANGELOG, README badges, final full test+lint, **COMPLETE before Sat** | pending |
+| Thu 08-13 | Follow-mode tests (append + truncation), edge cases (empty file, CRLF, unicode, oversized records), LICENSE (MIT) | DONE — 19 tests, ruff clean, pushed |
+| Fri 08-14 | Polish: CHANGELOG, README badges, final full test+lint, **COMPLETE before Sat** | DONE — final test+lint green, pushed |
 | Sat 08-15 | Buffer only — fixes if needed; else WEEKLY_LOG.md entry | pending |
 
 ### COMPLETED SIDE PROJECTS (log)
-- (none yet)
+- jsonl-tail (2026-08-15): 19 tests, MIT license, pushed to FreakyAdy/jsonl-tail
 
 ### BACKLOG (next picks)
 IDEAS.md: gh-pulse, issue-feeder, agent-eval CLI, promptlint, dataset integrity checker, GitHub Actions issue triager, LLM cost estimator.
