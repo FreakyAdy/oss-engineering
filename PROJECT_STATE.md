@@ -141,7 +141,7 @@ After #4695 ships: chain the accepted-issue queue in inspect_ai (#4770, #4781, #
 | Wed 08-12 | Repo + scaffold + core: pretty/compact print, -n/-a, stdin, --filter/--regex/--key, invalid-line passthrough | DONE — 13 tests, ruff clean, pushed |
 | Thu 08-13 | Follow-mode tests (append + truncation), edge cases (empty file, CRLF, unicode, oversized records), LICENSE (MIT) | DONE — 19 tests, ruff clean, pushed |
 | Fri 08-14 | Polish: CHANGELOG, README badges, final full test+lint, **COMPLETE before Sat** | DONE — final test+lint green, pushed |
-| Sat 08-15 | Buffer only — fixes if needed; else WEEKLY_LOG.md entry | pending |
+| Sat 08-15 | Buffer only — fixes if needed; else WEEKLY_LOG.md entry | DONE — follow-mode test fix committed, all 19 tests pass, ruff clean, pushed; commitizen PR #2067 CI green |
 
 ### COMPLETED SIDE PROJECTS (log)
 - jsonl-tail (2026-08-15): 19 tests, MIT license, pushed to FreakyAdy/jsonl-tail
