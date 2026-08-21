@@ -126,6 +126,79 @@ After #4695 ships: chain the accepted-issue queue in inspect_ai (#4770, #4781, #
 
 ---
 
+## WEEK 2 (2026-08-17 → 2026-08-23) — ISO Week 34
+
+### PROJECT: LLM Benchmark Dataset Curator (full-scale project, even week)
+- **REPO:** `week34-benchmark-curator` (new public repo under FreakyAdy)
+- **WHY:** Directly extends Week 33's `llm-eval-harness` — downloads, cleans, formats benchmark datasets (MMLU, GSM8K, HumanEval, etc.) to standardized JSONL for eval harness consumption. CLI + Python API.
+- **STACK:** Python ≥3.10, `datasets` (HF), `huggingface_hub`, `typer`, `rich`, `pytest`, `ruff`, uv/hatchling.
+- **MVP SCOPE:**
+  - `download` command: fetch benchmark from HF Hub / local / URL, handle splits/configs
+  - `clean` command: deduplicate, filter by length/quality, normalize fields → `input`/`expected`
+  - `format` command: export to JSONL (llm-eval-harness compatible) + optional HF dataset push
+  - `list` command: show available benchmarks with metadata
+  - Tests + CI + docs
+
+### PR TARGET (one per week): inspect_ai #4770
+- **ISSUE:** `fix(model): ChatMessage.text setter reorders content blocks when content is list[Content]` (accepted, no assignee, no open PR)
+- **REPO:** UKGovernmentBEIS/inspect_ai (local clone exists at `C:\Users\FreakyAdy\oss-engineering\inspect_ai`)
+- **SCOPE:** Fix the `ChatMessage.text` setter to preserve content block order when content is `list[Content]`
+
+### WEEK 2 TASK PLAN (Mon-Sat; binding day-by-day)
+
+**Mon (Day 1) — Planning + Project Scaffold. Expected commits: 2-3**
+- [ ] Update PROJECT_STATE.md with Week 2 plan (this entry)
+- [ ] Create `week34-benchmark-curator` repo locally + GitHub (public)
+- [ ] Scaffold: README, MIT LICENSE, .gitignore, pyproject.toml, GitHub Actions CI
+- [ ] Write PLAN.md with Tue-Sat milestones + DoD
+- [ ] Open "week-plan" issue linking PLAN.md
+- [ ] Push initial commit(s)
+
+**Tue (Day 2) — Core: Download + Benchmark Registry. Expected commits: 2**
+- [ ] Implement benchmark registry (built-in: MMLU, GSM8K, HumanEval, TruthfulQA, BBH, etc.)
+- [ ] `download` command: HF Hub fetch with split/config handling, local file, URL fallback
+- [ ] Unit tests for registry + download (mocked HF calls)
+- [ ] Run lint + test subset
+
+**Wed (Day 3) — Core: Clean + Transform. Expected commits: 2**
+- [ ] `clean` command: dedupe (exact + fuzzy), filter by token length, field normalization (`input`/`expected`)
+- [ ] `format` command: JSONL export (llm-eval-harness schema) + optional `push_to_hub`
+- [ ] Unit tests for clean/format pipelines
+- [ ] Run lint + test subset
+
+**Thu (Day 4) — CLI Polish + Integration. Expected commits: 2**
+- [ ] Typer CLI: `download`, `clean`, `format`, `list`, `info` commands with Rich output
+- [ ] Config file support (YAML) for benchmark presets / default args
+- [ ] End-to-end integration test: download GSM8K → clean → format → verify JSONL loads in llm-eval-harness
+- [ ] Run full test suite + lint
+
+**Fri (Day 5) — Docs + Examples + PR #4770 Start. Expected commits: 2-3**
+- [x] Comprehensive README with quickstart, command reference, examples
+- [x] Example: download GSM8K + HumanEval → clean → format → run with llm-eval-harness (CLI verified, tests pass)
+- [x] Start inspect_ai #4770: explored codebase, issue has active PR #4773 by author (hsusul)
+- [x] Run inspect_ai test baseline — scorer tests 459 passed, 170 skipped
+
+**Sat (Day 6) — PR #4770 Implementation + Project Finalize. Expected commits: 2-3**
+- [ ] Implement fix for `ChatMessage.text` setter (preserve block order)
+- [ ] Add tests asserting order preservation
+- [ ] Run full inspect_ai test suite + lint
+- [ ] Open PR referencing `Fixes #4770` (claim issue first per CONTRIBUTING)
+- [ ] Final benchmark-curator test + lint, push any fixes
+- [ ] Update PROJECT_STATE.md: completed work, tests, PR links, blockers
+
+**Sun — no code.** Weekly report cron (18:00) produces report.
+
+---
+
+### BLOCKERS / ACTION ITEMS
+- None currently. `gh` authed (FreakyAdy). inspect_ai clone exists locally.
+- Week 33 `llm-eval-harness` complete (Aug 14) — dogfood target for benchmark-curator output.
+- commitizen PR #2067: OPEN, CI green (21 Python versions), awaiting maintainer review.
+- jsonl-tail: COMPLETE, pushed to FreakyAdy/jsonl-tail.
+- **inspect_ai PR track:** All accepted issues in queue (#4770, #4781, #4756, #4881, #4914, #4901) have active PRs by issue authors or other contributors. Need to identify new target at Monday 09:00 planning.
+
+---
+
 ## SIDE-PROJECT TRACK (parallel to weekly PR, from 2026-08-12)
 
 > No-zero-days mandate (Ady, 2026-08-12): every Mon-Sat has a real commit. When the weekly PR is done/blocked,
