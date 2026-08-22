@@ -178,12 +178,10 @@ After #4695 ships: chain the accepted-issue queue in inspect_ai (#4770, #4781, #
 - [x] Start inspect_ai #4770: explored codebase, issue has active PR #4773 by author (hsusul)
 - [x] Run inspect_ai test baseline — scorer tests 459 passed, 170 skipped
 
-**Sat (Day 6) — PR #4770 Implementation + Project Finalize. Expected commits: 2-3**
-- [ ] Implement fix for `ChatMessage.text` setter (preserve block order)
-- [ ] Add tests asserting order preservation
-- [ ] Run full inspect_ai test suite + lint
-- [ ] Open PR referencing `Fixes #4770` (claim issue first per CONTRIBUTING)
-- [ ] Final benchmark-curator test + lint, push any fixes
+**Sat (Day 6) — Project Finalize + PR Track Blocked. Expected commits: 1-2**
+- [x] week34-benchmark-curator: fix lint/format/mypy config, all 74 tests pass, ruff clean, pushed to GitHub
+- [ ] Inspect_ai PR track: #4770 has active PR #4773 by issue author (hsusul) — blocked per CONTRIBUTING rule (verify zero open PRs before implementing)
+- [ ] Identified #4763 (bundled viewer ghost rows) as new accepted-issue target: no open PR, previous PR closed
 - [ ] Update PROJECT_STATE.md: completed work, tests, PR links, blockers
 
 **Sun — no code.** Weekly report cron (18:00) produces report.
@@ -195,7 +193,10 @@ After #4695 ships: chain the accepted-issue queue in inspect_ai (#4770, #4781, #
 - Week 33 `llm-eval-harness` complete (Aug 14) — dogfood target for benchmark-curator output.
 - commitizen PR #2067: OPEN, CI green (21 Python versions), awaiting maintainer review.
 - jsonl-tail: COMPLETE, pushed to FreakyAdy/jsonl-tail.
-- **inspect_ai PR track:** All accepted issues in queue (#4770, #4781, #4756, #4881, #4914, #4901) have active PRs by issue authors or other contributors. Need to identify new target at Monday 09:00 planning.
+- **inspect_ai PR track:** All accepted issues in original queue (#4770, #4781, #4756, #4881, #4914, #4901) have active PRs by issue authors or other contributors. **#4770 blocked** — PR #4773 by hsusul. **New target: #4763** (accepted, no open PR, previous PR #4814 closed). Need to claim and implement at Monday 09:00 planning if still available.
+- **Week 2 deliverables status:**
+  - PR track: BLOCKED (no available accepted issue without PR)
+  - Tool/project track: COMPLETE — week34-benchmark-curator (74 tests, lint clean, pushed)
 
 ---
 
